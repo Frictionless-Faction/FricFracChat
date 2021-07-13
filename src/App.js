@@ -20,17 +20,13 @@ firebase.initializeApp({
   measurementId: process.env.measurementId
 })
 
-
-
-
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 
-
-// Problem to be fixed, might add load and error here too
-const [user] = useAuthState(auth);
-
 function App() {
+
+  const [user] = useAuthState(auth);
+
   return (
     <div className="App">
       <header className="App-header">
