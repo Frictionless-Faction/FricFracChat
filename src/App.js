@@ -5,18 +5,19 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 
-import { useAuthState } from 'react-firebase-hooks/auth'
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
+require('dotenv').config();
 
 
 firebase.initializeApp({
-  apiKey: "AIzaSyDEPYPHvbN3NnY3xeynCZumLmT4LCKpkiM",
-  authDomain: "frictionless-faction.firebaseapp.com",
-  projectId: "frictionless-faction",
-  storageBucket: "frictionless-faction.appspot.com",
-  messagingSenderId: "77867668377",
-  appId: "1:77867668377:web:c16c299d503b947f92f908",
-  measurementId: "G-SEYMGF0TT7"
+  apiKey: process.env.apiKey,
+  authDomain: process.env.authDomain,
+  projectId: process.env.projectId,
+  storageBucket: process.env.storageBucket,
+  messagingSenderId: process.env.messagingSenderId,
+  appId: process.env.appId,
+  measurementId: process.env.measurementId
 })
 
 
@@ -26,7 +27,7 @@ const auth = firebase.auth();
 const firestore = firebase.firestore();
 
 
-
+// Problem to be fixed, might add load and error here too
 const [user] = useAuthState(auth);
 
 function App() {
@@ -39,10 +40,10 @@ function App() {
       </header>
     </div>
   );
-}
+};
 
 
-function signIn() {
+function SignIn() {
   const signInWithGoogle = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     auth.signInWithPopup(provider);
@@ -54,7 +55,7 @@ function signIn() {
 
 };
 
-function signOut() {
+function SignOut() {
   return auth.currentUser && (
     <button onClick = {() => auth.signOut()}> Sign Out</button>
   )
@@ -64,7 +65,7 @@ function signOut() {
 
 
 
-function chatRoom() {
+function ChatRoom() {
   const messagesRef = firestore.collection('messages');
   const query = messagesRef.orderBy('createdAt').limit(25);
 
@@ -73,7 +74,7 @@ function chatRoom() {
   return(
     <>
     <div>
-      {messages && messages.map(msg => <ChatMassage key={msg.id} massage={msg} />)}
+      {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
     </div>
     
     <form>
@@ -86,8 +87,7 @@ function chatRoom() {
 
 };
 
-
-function ChatMassage(props) {
+function ChatMessage(props) {
   const {text, uid, photoURL} = props.message;
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received' ;
 
