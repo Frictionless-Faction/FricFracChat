@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react';
 import './App.css';
-
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
@@ -19,7 +18,7 @@ firebase.initializeApp({
   appId: process.env.appId,
   measurementId: process.env.measurementId
 
-})
+});
 
 
 
@@ -46,14 +45,14 @@ function App() {
 
     </div>
   );
-}
+};
 
 function SignIn() {
 
   const signInWithGoogle = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     auth.signInWithPopup(provider);
-  }
+  };
 
   return (
     <>
@@ -62,13 +61,13 @@ function SignIn() {
     </>
   )
 
-}
+};
 
 function SignOut() {
   return auth.currentUser && (
     <button className="sign-out" onClick={() => auth.signOut()}>Sign Out</button>
   )
-}
+};
 
 
 function ChatRoom() {
@@ -80,8 +79,10 @@ function ChatRoom() {
 
   const [formValue, setFormValue] = useState('');
 
-
+  
+  // e as event for the function argument
   const sendMessage = async (e) => {
+    // normally when a form submited it refresh the page but here we add this line to prevent it 
     e.preventDefault();
 
     const { uid, photoURL } = auth.currentUser;
@@ -94,15 +95,17 @@ function ChatRoom() {
     })
 
     setFormValue('');
-    dummy.current.scrollIntoView({ behavior: 'smooth' });
-  }
+
+    // to scrolls the page when user types
+    scrolls.current.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (<>
     <main>
 
       {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
 
-      <span ref={dummy}></span>
+      <span ref={scrolls}></span>
 
     </main>
 
@@ -114,7 +117,7 @@ function ChatRoom() {
 
     </form>
   </>)
-}
+};
 
 
 function ChatMessage(props) {
@@ -124,11 +127,11 @@ function ChatMessage(props) {
 
   return (<>
     <div className={`message ${messageClass}`}>
-      <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
+      <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} alt = "profile picture" />
       <p>{text}</p>
     </div>
   </>)
-}
+};
 
 
 export default App;
