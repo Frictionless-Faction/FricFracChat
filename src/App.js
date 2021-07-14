@@ -20,9 +20,6 @@ firebase.initializeApp({
 
 });
 
-
-
-
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 const analytics = firebase.analytics();
@@ -71,7 +68,7 @@ function SignOut() {
 
 
 function ChatRoom() {
-  const dummy = useRef();
+  const scrolls = useRef();
   const messagesRef = firestore.collection('messages');
   const query = messagesRef.orderBy('createdAt').limit(25);
 
@@ -98,7 +95,7 @@ function ChatRoom() {
 
     // to scrolls the page when user types
     scrolls.current.scrollIntoView({ behavior: 'smooth' });
-  };
+  }
 
   return (<>
     <main>
