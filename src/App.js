@@ -11,6 +11,7 @@ require ('dotenv').config();
 
 // initalise the config of the firebase app
 firebase.initializeApp({
+  
   apiKey: process.env.REACT_APP_apiKey,
   authDomain: process.env.REACT_APP_authDomain,
   projectId: process.env.REACT_APP_projectId,
@@ -26,12 +27,13 @@ firebase.initializeApp({
 //   throw env.error
 // };
 
+
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 // const analytics = firebase.analytics();
 
-
 function App() {
+
   const [user] = useAuthState(auth);
 
   return (
@@ -50,7 +52,6 @@ function App() {
 };
 
 function SignIn() {
-
   const signInWithGoogle = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     auth.signInWithPopup(provider);
@@ -76,11 +77,8 @@ function ChatRoom() {
   const scrolls = useRef();
   const messagesRef = firestore.collection('messages');
   const query = messagesRef.orderBy('createdAt').limit(25);
-
   const [messages] = useCollectionData(query, { idField: 'id' });
-
   const [formValue, setFormValue] = useState('');
-
   
   // e as event for the function argument
   const sendMessage = async (e) => {
@@ -114,17 +112,15 @@ function ChatRoom() {
     <form onSubmit={sendMessage}>
 
       <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" />
-
+        
       <button type="submit" disabled={!formValue}>🕊️</button>
 
     </form>
   </>)
 };
 
-
 function ChatMessage(props) {
   const { text, uid, photoURL } = props.message;
-
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
   return (<>
