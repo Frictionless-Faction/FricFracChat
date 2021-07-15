@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Home() {
+    return(
     <div>
         <div>
             <h1> CHAT ROOM </h1>
@@ -14,6 +15,7 @@ function Home() {
             </footer>
         </div>
     </div>
+    )
 }
 
 export default Home;
