@@ -4,6 +4,7 @@ import '../App.css'
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
+import styled from 'styled-components';
 // import 'firebase/analytics';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -32,9 +33,9 @@ const firestore = firebase.firestore();
 // const analytics = firebase.analytics();
 
 
+
 function Chat() {
   const [user] = useAuthState(auth);
-
   return (
     <div className="App">
       <header>
