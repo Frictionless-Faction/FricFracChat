@@ -5,7 +5,6 @@ import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import Chat from "./pages/Chat";
 import About from "./pages/About";
 
-
 function App(){
   return(
     <Router>
