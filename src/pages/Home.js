@@ -11,7 +11,7 @@ function Home() {
             </h2>
 
             <footer>
-                <Link className="link" ro ="/About"> About </Link>
+                <Link className="link" to ="/About"> About </Link>
             </footer>
         </div>
     </div>
