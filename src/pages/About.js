@@ -1,5 +1,10 @@
 import React from "react";
 import Footer from "./Footer";
+import "./About.css";
+import { FaFigma, FaGithub, FaReact } from "react-icons/fa";
+import { SiFirebase } from "react-icons/si";
+
+
 
 export default function About() {
   return (
@@ -12,67 +17,73 @@ export default function About() {
         </p>
 
         <h3>Dependencies Used:</h3>
-        <div className="class='flat-under'">
+
+        <div className="flat-under">
           <div className="grow-container">
             <a
-              className="react"
+              className="to-react circle-button"
               href="https://reactjs.org/"
               target="_blank"
               rel="noreferrer"
             >
-              React
+              <FaReact />
             </a>
           </div>
 
           <div className="grow-container">
             <a
-              className="firebase"
+              className="to-firebase circle-button"
               href="https://firebase.google.com/"
               target="_blank"
               rel="noreferrer"
             >
-              Firebase
+              <SiFirebase />
             </a>
           </div>
 
-          <div className="grow-container">
+          <div className="grow-container ">
             <a
-              className="figma"
+              className="to-figma circle-button"
               href="https://www.figma.com/"
               target="_blank"
               rel="noreferrer"
             >
-              Figma
+              <FaFigma />
             </a>
           </div>
 
           <div className="grow-container">
             <a
-              className="github"
+              className="to-github circle-button"
               href="https://github.com/"
               target="_blank"
               rel="noreferrer"
+              
             >
-              Github
+              <FaGithub />
             </a>
           </div>
         </div>
-
+        <br />
+        <br />
+        <h2> FricFracChat Github Repository: </h2>
         <div className="githubRepo">
-          <h2> FricFracChat Github Repository: </h2>
           <div className="btn-repo">
-            <a
+            <a className= "link"
               href="https://github.com/Frictionless-Faction"
               target="_blank"
               rel="noreferrer"
+              style ={{textDecoration :"none"}}
             >
-              Github Reposityry
+              Our Code
             </a>
           </div>
         </div>
-
+        <br />
+        <br />
+        <h2>Credit By:</h2>
         <div className="credit">
-          <h2>Credit By:</h2>
+          
 
           <div className="links_git">
             <div className="gits">
@@ -117,6 +128,10 @@ export default function About() {
           </div>
         </div>
       </div>
+
+
+
+
 
       <Footer />
     </div>
