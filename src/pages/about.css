@@ -1,0 +1,82 @@
+body {
+    background-color: #121417;
+    background-image: url("../assets/bg.png");
+    text-align: center;
+    color: #EFEDEE;
+}
+
+.who,
+.project {
+    padding: 20px 10%;
+}
+
+.project p {
+    padding: 30px 0;
+}
+
+.links_tech {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.techs {
+    margin-bottom: 10px;
+}
+
+.who {
+    padding-top: 0;
+}
+
+.links_git {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.gits {
+    margin: 20px;
+}
+
+
+.gits a,
+.techs a {
+    color: #C39B6B;
+    transition-duration: 350ms;
+}
+
+.gits:hover,
+.techs:hover {
+    transform: scale(1.1,1.1);
+}
+
+.gits a:hover,
+.techs a:hover {
+    color: #ffd097;
+}
+
+.project h2,
+.who h2 {
+   display: inline-block;
+   border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+}
+
+.cn {
+    display: inline-block;
+}
+
+.cn a {
+    color: #C39B6B;
+    transition-duration: 350ms;
+}
+
+.cn a:hover {
+    color: #ffd097;
+}
+
+.cn:hover {
+    transform: translate3d(0, -2px, 0);
+}
