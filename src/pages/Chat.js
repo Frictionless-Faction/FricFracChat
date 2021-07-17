@@ -22,8 +22,8 @@ firebase.initializeApp({
 });
 
 // // catch errors for dotenv
-// if (env.error) {
-//   throw env.error
+// if (envResult.error) {
+//   throw envResult.error
 // };
 
 const auth = firebase.auth();
