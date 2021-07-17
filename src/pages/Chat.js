@@ -1,4 +1,3 @@
-// Going to put the app code in here
 import React, { useRef, useState } from 'react';
 import '../App.css'
 import firebase from 'firebase/app';
@@ -103,7 +102,6 @@ function ChatRoom() {
     scrolls.current.scrollIntoView({ behavior: 'smooth' });
   }
 
-
   return (<>
     <main>
 
@@ -136,20 +134,6 @@ function ChatMessage(props) {
     </div>
   </>)
 };
-
-// function UpdateProfile(props){
-//   const user = firebase.auth().currentUser;
-
-//   user.updateProfile({
-//     displayName: "Jane Q. User",
-//     photoURL: "https://example.com/jane-q-user/profile.jpg"
-//   }).then(() => {
-//     // Update successful
-//     // ...
-//   }).catch((error) => {
-//     throw new Error("could not update profile");
-//   });  
-// };
 
 export default Chat;
 
