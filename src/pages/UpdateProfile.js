@@ -11,13 +11,21 @@ const user = firebase.auth().currentUser;
 require ('dotenv').config();
 
 // tester page
-function UpdateProfile(){
+function UpdateInfo(){
   const { register, formState: { errors }, handleSubmit} = useForm();
-  const onSubmit = data => console.log(data);
+  const userID = user.uid;
+  const usersRef = firestore.collection("user").doc(userID);
+  const onSubmit = data => {
+    
+    console.log(data);
+
+  }
+
 
     return(
       <div>
         <h1>hello</h1> 
+        {/* confirm update here */}
         <form onSubmit={handleSubmit(onSubmit)}>
           {/* place holder is text inside */}
           <div>
@@ -32,15 +40,14 @@ function UpdateProfile(){
           </div>
           <div>
           <p>Joined on: {user.metadata.creationTime}</p>
-          {/* <input type="text" placeholder={} /> */}
           </div>
       <input type="submit" />
         </form>
       </div>
     );
-  }
+  };
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<UpdateProfile />, rootElement);
+ReactDOM.render(<UpdateInfo />, rootElement);
 
-export default UpdateProfile;
+export default UpdateInfo;
