@@ -4,7 +4,7 @@ import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Chat from "./pages/Chat";
 import About from "./pages/About";
-import Update from "./pages/UpdateProfile";
+import Update from "./components/UpdateInfo";
 
 function App(){
   return(

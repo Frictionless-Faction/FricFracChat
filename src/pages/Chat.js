@@ -7,6 +7,7 @@ import 'firebase/firestore';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
+import UpdateInfo from '../components/UpdateInfo'; 
 require ('dotenv').config();
 
 // initalise the config of the firebase app
@@ -31,11 +32,14 @@ const firestore = firebase.firestore();
 // const analytics = firebase.analytics();
 
 
+
+
 function Chat() {
   const [user] = useAuthState(auth);
 
   return (
     <div className="App">
+      <UpdateInfo />
       <header>
         <h1>⚛️🔥💬</h1>
         <SignOut />

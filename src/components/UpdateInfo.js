@@ -13,14 +13,13 @@ require ('dotenv').config();
 // tester page
 function UpdateInfo(){
   const { register, formState: { errors }, handleSubmit} = useForm();
-  const userID = user.uid;
-  const usersRef = firestore.collection("user").doc(userID);
+  const usersRef = firestore.collection("users").doc();
+  // const userID = user.uid;
   const onSubmit = data => {
     
     console.log(data);
 
   }
-
 
     return(
       <div>
@@ -30,7 +29,7 @@ function UpdateInfo(){
           {/* place holder is text inside */}
           <div>
             <label>Status</label>
-            <input placeholder="Status" {...register("status", { maxLength: 140 })} />
+            <input placeholder="hi" {...register("status", { maxLength: 140 })} />
             <p>{errors.status && "The status cannot exceed 140 characters."}</p>
           </div>
           <div>
