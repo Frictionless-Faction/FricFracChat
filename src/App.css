@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 body {
-  background-color: #282c34;
+  background-color: #2a3428;
+  font-family: 'Jost', sans-serif;
 }
 
 .App {
@@ -9,7 +12,7 @@ body {
 }
 
 .App header {
-  background-color: #181717;
+  background-color: rgb(255, 154, 131);
   height: 10vh;
   min-height: 50px;
   color: white;
@@ -25,12 +28,13 @@ body {
   box-sizing: border-box;
 }
 
-.App section {
+
+.App section {  /* background */
   display: flex;
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
-  background-color: rgb(40, 37, 53);
+  background-color: rgb(255, 255, 255);
 }
 
 main {
@@ -53,8 +57,8 @@ main::-webkit-scrollbar-track {
 main::-webkit-scrollbar-thumb {
   background: #6649b8;
 }
-
-form {
+ */
+ form {
   height: 10vh;
   position: fixed;
   bottom: 0;
@@ -70,7 +74,6 @@ form button {
   background-color: rgb(56, 56, 143);
 }
 
-
 input {
   line-height: 1.5;
   width: 100%;
@@ -83,7 +86,7 @@ input {
 }
 
 button {
-  background-color: #282c34; /* Green */
+  background-color: #282c34; 
   border: none;
   color: white;
   padding: 15px 32px;
@@ -97,17 +100,17 @@ button {
 button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
-}
-
+} 
 
 .sign-in {
-  color: #282c34;
-  background: white;
+  font-family: 'Fredoka One', cursive;
+  color:white;
+  background:  #7394d8;
   max-width: 400px;
   margin: 0 auto;
 }
 
-
+/* 
 
 
 ul, li {
@@ -151,4 +154,4 @@ img {
   height: 40px;
   border-radius: 50%;
   margin: 2px 5px;
-}
+} */
