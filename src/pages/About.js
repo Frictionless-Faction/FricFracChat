@@ -1,6 +1,6 @@
 import React from "react";
 import Footer from "./Footer";
-import "./About.css";
+import "../css/About.css";
 import { FaFigma, FaGithub, FaReact } from "react-icons/fa";
 import { SiFirebase } from "react-icons/si";
 
