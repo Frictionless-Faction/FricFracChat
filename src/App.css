@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 body {
   background-color: #2a3428;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
 }
 
 .App {
@@ -28,8 +28,8 @@ body {
   box-sizing: border-box;
 }
 
-
-.App section {  /* background */
+.App section {
+  /* background */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -57,8 +57,8 @@ main::-webkit-scrollbar-track {
 main::-webkit-scrollbar-thumb {
   background: #6649b8;
 }
- */
- form {
+
+form {
   height: 10vh;
   position: fixed;
   bottom: 0;
@@ -86,7 +86,7 @@ input {
 }
 
 button {
-  background-color: #282c34; 
+  background-color: #282c34;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -100,14 +100,68 @@ button {
 button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
-} 
+}
 
 .sign-in {
-  font-family: 'Fredoka One', cursive;
-  color:white;
-  background:  #7394d8;
-  max-width: 400px;
-  margin: 0 auto;
+  justify-content: center;
+  font-family: "Fredoka One", cursive;
+  align-items: center;
+  color: #fff;
+  background: #94b8ff;
+  box-sizing: border-box;
+  width: 150px;
+  height: 150px;
+  padding: 80px 1em 0 1em;
+  margin: 0px 100px;
+  margin-left: 180px;
+  padding: 30px 1em 0 1em;
+  background-color: #a4c9cf;
+  border-radius: 100% 100% 0 0;
+}
+
+
+/* 
+.glossy {
+  font-family: "Fredoka One", cursive;
+  margin: 0 100px;
+  background: #94c4fe;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(31%, #94c4fe),
+    color-stop(100%, #d3f6fe)
+  );
+  background: -webkit-linear-gradient(top, #94c4fe 31%, #d3f6fe 100%);
+  background: -moz-linear-gradient(top, #94c4fe 31%, #d3f6fe 100%);
+  background: -o-linear-gradient(top, #94c4fe 31%, #d3f6fe 100%);
+  background: -ms-linear-gradient(top, #94c4fe 31%, #d3f6fe 100%);
+  background: linear-gradient(to bottom, #94c4fe 31%, #d3f6fe 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#94c4fe', endColorstr='#d3f6fe',GradientType=0 );
+
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+
+  border: 1px solid #4864a9b0;
+
+  color: rgba(0, 0, 0, 0.678);
+  font-size: 0.75em;
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+
+  -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+
+
+}
+
+.glossy:hover {
+  transition-duration: 1s;
+  color: #000;
+} */
+
+.tagline {
+  text-align: center;
 }
 
 /* 
