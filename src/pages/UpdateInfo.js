@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useAuth } from "../contexts/AuthContext";
-import {user, photoURLRef, displayNameRef} from "../contexts/AuthContext"
+import { user, firestore, photoURLRef, displayNameRef } from "../contexts/AuthContext"
 
 
 // tester page
@@ -52,7 +52,9 @@ function UpdateInfoP1(){
 
 function UpdateInfoP2(){
   const { register, formState: { errors }, handleSubmit} = useForm();
-  // const usersRef = firestore.collection("users").doc();
+  const usersRef = firestore.collection("users").doc(user.uid);
+  const statusRef = usersRef.status
+  const bioRef = usersRef.bio
 
   const onSubmit = data => {
     
