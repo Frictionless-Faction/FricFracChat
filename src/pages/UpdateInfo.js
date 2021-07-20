@@ -10,33 +10,23 @@ function UpdateInfoP1(){
 
   const { register, formState: { errors }, handleSubmit } = useForm();
   const { updateNameProfilePic } = useAuth();
+
   
   // e for event
-  // sendUpdateAuth is not called, I am having problems with routing the data from the form to the 'Refs' e.g displayNameRef and photoURLRef
-  // const sendUpdateAuth = handleSubmit(e) => {
-
-    // // get values from the form
-    // const displayNameRef = getValues("displayNameRef");
-    // const photoURLRef = getValues("photoURLRef");
-
-
-  
-
   // console log for testing
-  const onSubmit = (data, e) => {
-    console.log(data);
-    e.preventDeafult();
+  const onSubmit = async (data, e) => {
+    // e.preventDeafult();
+    console.log(data, e);
     const photo = data.photoURLRef
     const displayName = data.displayNameRef
 
     try {
-      updateNameProfilePic(photo, displayName);
+      await updateNameProfilePic(photo, displayName);
   } catch {
     throw new Error("unable to update profile")
   }
   };
 
-// };
 
   return(
     <div>
