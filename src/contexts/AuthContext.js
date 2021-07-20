@@ -14,10 +14,10 @@ export function useAuth(){
 export function AuthProvider({ children }) {
     const [currentUser, setCurrentUser] = useState();
 
-    function updateNameProfilePic(displayNameInput, photoURLInput){
+    function updateNameProfilePic(displayNameRef, photoURLRef){
         return user.updateProfile({
-            displayName: displayNameInput,
-            photoURL: photoURLInput
+            displayName: displayNameRef,
+            photoURL: photoURLRef
           }).then(() => {
             // Update successful
             console.log("Profile update successful!")
