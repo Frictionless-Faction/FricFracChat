@@ -1,23 +1,55 @@
 import React from "react";
-import Footer from "./Footer";
-import "./About.css";
+import "../css/About.css";
 import { FaFigma, FaGithub, FaReact } from "react-icons/fa";
 import { SiFirebase } from "react-icons/si";
-
-
+import danny from "../images/danny.jpg";
+import roman from "../images/roman.png";
+import jess from "../images/jess.jpeg";
+import mina from "../images/mina.JPG";
 
 export default function About() {
   return (
     <div className="about">
       <h1>About Our Project</h1>
       <div className="project">
-        <p>
-          FricFracChat is a project that created collaboratively as a final
-          project
-        </p>
-
-        <h3>Dependencies Used:</h3>
-
+        <h3 className="welcome">
+          Welcome to the FricFrac Chat project! (We caught you looking!) 👀{" "}
+        </h3>
+        <br />
+        <h3>
+        ℹ️ Info </h3>
+        <ul>
+          <li>Project Start Date: 12th July 2021 </li>
+          <li>Allotted time: 2 weeks </li>
+          <li>Concept: Chat app </li>
+          Description: This is the final project of 4 junior developers on the
+          Code Nation master course (cohort 24). The overall concept is a chat
+          app that people can use to talk to each other. The project has a react
+          front-end and a firebase back-end. At the time of writing, the title
+          is pending.
+          <br />
+        </ul>
+        <h3>🤔 What's in a name? Why Frictionless Faction?</h3>
+        <ul>
+          We initially spoke about how automated workflows can be smooth (or
+          frictionless) when set up correctly. The initial aim of project
+          planning was to create a solid foundation that would enable us to work
+          as frictionlessly as possible in the later stages. With a little bit
+          of alliteration magic "Frictionless Faction" was born. Frictionless
+          Faction is abbreviated to FricFrac for instead of FricFac because it
+          just rolls off the tongue a little easier. We also get on quite well
+          so that adds to the feel of the name.
+        </ul>
+        <br />
+        <h3>👨‍💻Who or what is Code Nation?</h3>
+        <br />
+        Code Nation is," unique, business led, digital training provider with a
+        sole purpose of creating work ready, employable talent." You can find
+        their website{" "}
+        <a href="https://wearecodenation.com" target="_blank" rel="noreferrer">
+          here
+        </a>
+        <h2 className="welcome">Dependencies Used:</h2>
         <div className="flat-under">
           <div className="grow-container">
             <a
@@ -58,7 +90,6 @@ export default function About() {
               href="https://github.com/"
               target="_blank"
               rel="noreferrer"
-              
             >
               <FaGithub />
             </a>
@@ -66,14 +97,16 @@ export default function About() {
         </div>
         <br />
         <br />
-        <h2> FricFracChat Github Repository: </h2>
         <div className="githubRepo">
+          <h2> FricFracChat Github Repository: </h2>
+
           <div className="btn-repo">
-            <a className= "link"
+            <a
+              className="link"
               href="https://github.com/Frictionless-Faction"
               target="_blank"
               rel="noreferrer"
-              style ={{textDecoration :"none"}}
+              style={{ textDecoration: "none" }}
             >
               Our Code
             </a>
@@ -81,59 +114,103 @@ export default function About() {
         </div>
         <br />
         <br />
-        <h2>Credit By:</h2>
-        <div className="credit">
-          
+        <h2>Our Team:</h2>
+      </div>
+      <div>
+        <div className="row">
+          <div className="links_git">
+            <div className="gits">
+              <img src={danny} alt="Danny" />
+              <div className="container">
+                <p className="title">Software Developer</p>
+                <p>https://github.com/dannyvsm</p>
+                <p>
+                  <button className="button">
+                    <a
+                      href="https://github.com/dannyvsm"
+                      target="_blank"
+                      rel="noreferrer"
+                      style={{ textDecoration: "none" }}
+                    >
+                      {" "}
+                      Github
+                    </a>
+                  </button>
+                </p>
+              </div>
+            </div>
+          </div>
 
           <div className="links_git">
             <div className="gits">
-              <a
-                href="https://github.com/dannyvsm"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Danny Smith
-              </a>
+              <img src={jess} alt="Jess" />
+              <div className="container">
+                <p className="title">Software Developer</p>
+                <p>https://github.com/Jwilss3</p>
+                <p>
+                  <button className="button">
+                    <a
+                      href="https://github.com/Jwilss3"
+                      target="_blank"
+                      rel="noreferrer"
+                      style={{ textDecoration: "none" }}
+                    >
+                      {" "}
+                      Github
+                    </a>
+                  </button>
+                </p>
+              </div>
             </div>
+          </div>
 
+          <div className="links_git">
             <div className="gits">
-              <a
-                href="https://github.com/Jwilss3"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Jess Wilson
-              </a>
+              <img src={mina} alt="Mina" />
+              <div className="container">
+                <p className="title">Software Developer</p>
+                <p>https://github.com/Minakrv</p>
+                <p>
+                  <button className="button">
+                    <a
+                      href="https://github.com/Minakrv"
+                      target="_blank"
+                      rel="noreferrer"
+                      style={{ textDecoration: "none" }}
+                    >
+                      {" "}
+                      Github
+                    </a>
+                  </button>
+                </p>
+              </div>
             </div>
+          </div>
 
+          <div className="links_git">
             <div className="gits">
-              <a
-                href="https://github.com/Minakrv"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Mina Khosravi
-              </a>
-            </div>
-
-            <div className="gits">
-              <a
-                href="https://github.com/RomanHyde"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Roman Hyde
-              </a>
+              <img src={roman} alt="Roman" />
+              <div className="container">
+                <p className="title">Software Developer</p>
+                <p>https://github.com/RomanHyde</p>
+                <p>
+                  <button className="button">
+                    <a
+                      href="https://github.com/RomanHyde"
+                      target="_blank"
+                      rel="noreferrer"
+                      style={{ textDecoration: "none" }}
+                    >
+                      {" "}
+                      Github
+                    </a>
+                  </button>
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-
-
-
-
-      <Footer />
     </div>
   );
 }
