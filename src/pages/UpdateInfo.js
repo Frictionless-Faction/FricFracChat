@@ -5,13 +5,13 @@ import { user, firestore, photoURLRef, displayNameRef } from "../contexts/AuthCo
 
 
 // tester page
-
 function UpdateInfoP1(){
 
   const { register, formState: { errors }, handleSubmit } = useForm();
   const { updateNameProfilePic } = useAuth();
 
   // e for event
+  // sendUpdateAuth is not called, I am having problems with routing the data from the form to the 'Refs' e.g displayNameRef and photoURLRef
   const sendUpdateAuth = async (e) => {
     e.preventDeafult();
 
@@ -31,7 +31,7 @@ function UpdateInfoP1(){
     <div>
       <img src={user.photoURL} alt="Profile pic" />
       <p>Joined on: {user.metadata.creationTime}</p>
-        <form onSubmit={sendUpdateAuth, handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           {/* place holder is text inside */}
           <div>
             <label>Profile Picture URL</label>
@@ -85,4 +85,4 @@ function UpdateInfoP2(){
   };
 
 
-export default UpdateInfoP1;
+export {UpdateInfoP1, UpdateInfoP2} ;
