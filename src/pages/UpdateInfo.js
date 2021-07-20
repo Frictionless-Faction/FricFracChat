@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useAuth } from "../contexts/AuthContext";
-import {photoURLRef, displayNameRef} from "../contexts/AuthContext"
+import {user, photoURLRef, displayNameRef} from "../contexts/AuthContext"
 
 
 // tester page
@@ -11,6 +11,7 @@ function UpdateInfoP1(){
   const { register, formState: { errors }, handleSubmit } = useForm();
   const { updateNameProfilePic } = useAuth();
 
+  // e for event
   const sendUpdateAuth = async (e) => {
     e.preventDeafult();
 
@@ -30,7 +31,7 @@ function UpdateInfoP1(){
     <div>
       <img src={user.photoURL} alt="Profile pic" />
       <p>Joined on: {user.metadata.creationTime}</p>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={sendUpdateAuth, handleSubmit(onSubmit)}>
           {/* place holder is text inside */}
           <div>
             <label>Profile Picture URL</label>
@@ -49,40 +50,37 @@ function UpdateInfoP1(){
 }
 
 
-// function UpdateInfoP2(user){
-//   const { register, formState: { errors }, handleSubmit} = useForm();
-//   // const usersRef = firestore.collection("users").doc();
+function UpdateInfoP2(){
+  const { register, formState: { errors }, handleSubmit} = useForm();
+  // const usersRef = firestore.collection("users").doc();
 
-//   const onSubmit = data => {
+  const onSubmit = data => {
     
-//     console.log(data);
+    console.log(data);
 
-//   }
-
-//     return(
-//       <div>
-//         <h1>hello</h1> 
-//         {/* confirm update here */}
-//         <form onSubmit={handleSubmit(onSubmit)}>
-//           {/* place holder is text inside */}
-//           <div>
-//             <label>Status</label>
-//             <input placeholder="hi" {...register("status", { maxLength: 140 })} />
-//             <p>{errors.status && "The status cannot exceed 140 characters."}</p>
-//           </div>
-//           <div>
-//             <label>Bio</label>
-//             <input placeholder="Tell us about yourself.." {...register("bio", { maxLength: 300 })} /> 
-//             <p>{errors.bio && "The bio cannot exceed 300 characters."}</p>
-//           </div>
-//           <div>
-//           <p>Joined on: time </p>
-//           </div>
-//       <input type="submit" />
-//         </form>
-//       </div>
-//     );
-//   };
+  }
+// add ref values
+    return(
+      <div>
+        <h1>hello</h1> 
+        {/* confirm update here */}
+        <form onSubmit={handleSubmit(onSubmit)}>
+          {/* place holder is text inside */}
+          <div>
+            <label>Status</label>
+            <input placeholder="Put status here.." ref= {statusRef} {...register("status", { maxLength: 140 })} />
+            <p>{errors.status && "The status cannot exceed 140 characters."}</p>
+          </div>
+          <div>
+            <label>Bio</label>
+            <input placeholder="Tell us about yourself.." ref= {bioRef} {...register("bio", { maxLength: 300 })} /> 
+            <p>{errors.bio && "The bio cannot exceed 300 characters."}</p>
+          </div>
+      <input type="submit" />
+        </form>
+      </div>
+    );
+  };
 
 
 export default UpdateInfoP1;
