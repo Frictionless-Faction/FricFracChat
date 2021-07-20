@@ -4,18 +4,14 @@ body {
 h1 {
   text-align: center;
 }
-.subheading{
-  font-size: large;
-  font-style: bold;
-}
+
 p {
   color: rgb(90, 88, 88);
-  
 }
-.welcome{
+.about,
+ul li{
   text-align: center;
 }
-
 .flat-under {
   display: flex;
   justify-content: space-around;
@@ -24,7 +20,7 @@ p {
 
 .circle-button {
   font-family: "Roboto", sans-serif;
-  color: #ccc;
+  color: rgb(185, 184, 184);
   display: inline-block;
   font-size: 2rem;
   border-radius: 50%;
@@ -32,6 +28,7 @@ p {
 }
 
 .circle-button:hover {
+  color:#ffffff;
   animation: circle-anim 0.3s ease forwards;
   transition: all 0.4s ease;
 }
@@ -43,19 +40,20 @@ p {
 
 
 .to-react:hover {
-  background: white;
+  background: rgb(153,255,255);
 }
 
 .to-figma:hover {
-  background: white;
+  background: rgb(255,51,153);
 }
 
 .to-firebase:hover {
-  background: white;
+
+  background: rgb(255,204,102);
 }
 
 .to-github:hover {
-  background: white;
+  background: #949393;
 }
 
 @keyframes circle-anim {
@@ -215,12 +213,10 @@ h2 {
   transition-duration: 350ms;
 }
 
-.gits:hover,
-.techs:hover {
+.gits:hover{
   transform: scale(1.1, 1.1);
 }
-.gits a:hover,
-.techs a:hover {
+.gits a:hover{
   color: #00ffcb;
 }
 
@@ -229,7 +225,7 @@ h2 {
   outline: 0;
   display: inline-block;
   padding: 8px;
-  color: white;
+  color: #ffffff;
   background-color: #000;
   text-align: center;
   cursor: pointer;
@@ -241,7 +237,7 @@ h2 {
 }
 
 @media screen and (max-width: 850px) {
-  .credit {
+  .row {
     width: 100%;
     display: block;
   }
