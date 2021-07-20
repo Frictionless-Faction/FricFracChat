@@ -4,12 +4,15 @@ body {
 h1 {
   text-align: center;
 }
-
-p {
-  color: black;
-  text-align: left;
+.subheading{
+  font-size: large;
+  font-style: bold;
 }
-h3 {
+p {
+  color: rgb(90, 88, 88);
+  
+}
+.welcome{
   text-align: center;
 }
 
@@ -40,19 +43,19 @@ h3 {
 
 
 .to-react:hover {
-  background: rgb(51,255,255);
+  background: white;
 }
 
 .to-figma:hover {
-  background: rgb(255, 0, 153);
+  background: white;
 }
 
 .to-firebase:hover {
-  background: rgb(255, 204, 51);
+  background: white;
 }
 
 .to-github:hover {
-  background: gray;
+  background: white;
 }
 
 @keyframes circle-anim {
@@ -71,13 +74,21 @@ h3 {
 }
 h2 {
   text-align: center;
+  padding: 50px;
 }
 .githubRepo {
   text-align: center;
   height: 100%;
-  display: flex;
+  padding-top: 80px;
   align-items: center;
-  justify-content: center;
+  display: flex;
+  justify-content:center;
+  
+}
+
+.link{
+  text-align: center;
+  padding: 20px;
 }
 
 .btn-repo {
@@ -86,7 +97,6 @@ h2 {
   font-family: "Nunito", sans-serif;
   font-size: 22px;
   text-transform: uppercase;
-  
   display: flex;
   justify-content: center;
   letter-spacing: 1.3px;
@@ -169,17 +179,35 @@ h2 {
 
 
 
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+
+
 .links_git {
-  padding-top: 20px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  text-transform: uppercase;
+  float: left;
+  width: 23.3%;
+  height: 100%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+  
+  
 }
 
 .gits {
-  margin: 20px;
-  align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
 }
 
 .gits a{
@@ -195,7 +223,27 @@ h2 {
 .techs a:hover {
   color: #00ffcb;
 }
-.credit {
+
+.button {
+  border: none;
+  outline: 0;
   display: inline-block;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
 }
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 850px) {
+  .credit {
+    width: 100%;
+    display: block;
+  }
+}
+
