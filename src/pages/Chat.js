@@ -4,6 +4,7 @@ import '../App.css'
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
+import {Link} from  'react-router-dom';
 // import 'firebase/analytics';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -45,6 +46,7 @@ function Chat() {
       <section>
         {user ? <ChatRoom /> : <SignIn />}
       </section>
+      <Link to = "/about" >About</Link>
 
     </div>
   );
