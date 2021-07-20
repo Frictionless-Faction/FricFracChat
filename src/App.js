@@ -4,7 +4,7 @@ import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Chat from "./pages/Chat";
 import About from "./pages/About";
-import UpdateInfoP1 from "./pages/UpdateInfo";
+import {UpdateInfoP1, UpdateInfoP2 } from "./pages/UpdateInfo";
 import { AuthProvider } from "./contexts/AuthContext";
 
 
@@ -20,6 +20,7 @@ function App(){
             <Route path="/chat"  component={Chat} />
             <Route path="/about" component={About} />
             <Route path="/update" component={UpdateInfoP1} />
+            <Route path="/update" component={UpdateInfoP2} />
           </Switch>
         </AuthProvider>
       </Router>
