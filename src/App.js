@@ -4,7 +4,8 @@ import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Chat from "./pages/Chat";
 import About from "./pages/About";
-import Update from "./components/UpdateInfo";
+import UpdateInfoP1 from "./pages/UpdateInfo";
+
 
 function App(){
   return(
@@ -15,7 +16,7 @@ function App(){
         <Route path= "/" exact component={Home} />
         <Route path="/chat"  component={Chat} />
         <Route path="/about" component={About} />
-        <Route path="/update" component={Update} />
+        <Route path="/update" component={UpdateInfoP1} />
       </Switch>
     </Router>
   );
