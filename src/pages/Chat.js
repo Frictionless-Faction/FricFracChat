@@ -45,6 +45,7 @@ function Chat() {
       <section>
         {user ? <ChatRoom /> : <SignIn />}
       </section>
+      <Link to = "/about" >About</Link>
 
     </div>
   );
