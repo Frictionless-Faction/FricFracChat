@@ -20,7 +20,7 @@ function App(){
             <Route path="/chat"  component={Chat} />
             <Route path="/about" component={About} />
             <Route path="/update" component={UpdateInfoP1} />
-            <Route path="/update" component={UpdateInfoP2} />
+            {/* <Route path="/update" component={UpdateInfoP2} /> */}
           </Switch>
         </AuthProvider>
       </Router>

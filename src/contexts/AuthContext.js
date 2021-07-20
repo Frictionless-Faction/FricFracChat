@@ -5,7 +5,7 @@ import 'firebase/firestore';
 import { auth } from '../pages/Chat';
 
 const AuthContext = createContext();
-const user = firebase.auth().currentUser;
+export const user = firebase.auth().currentUser;
 
 export function useAuth(){
     return useContext(AuthContext)
