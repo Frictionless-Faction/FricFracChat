@@ -1,39 +1,47 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import firebase from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/firestore';
+import { useAuth } from './../contexts/AuthContext';
 
-const auth = firebase.auth();
-const firestore = firebase.firestore();
-const user = firebase.auth().currentUser;
-require ('dotenv').config();
 
 // tester page
 
 function UpdateInfoP1(){
-  // const userID = user.uid;
 
-  // Updates the user attributes:
-// user.updateProfile({
-//   displayName: "Jane Q. User",
-//   photoURL: "https://example.com/jane-q-user/profile.jpg"
-// }).then(function() {
-//   // Profile updated successfully!
-//   var displayName = user.displayName;
-//   // "https://example.com/jane-q-user/profile.jpg"
-//   var photoURL = user.photoURL;
-// }, function(error) {
-//   // An error happened.
-// console.log("P1 profile could not be updated")
-// });
+  const { register, formState: { errors }, handleSubmit } = useForm();
+  const { updateNameProfilePic } = useAuth();
+
+  const sendUpdateAuth = async (e) => {
+    e.preventDeafult();
+
+    try {
+      await updateNameProfilePic(photoURLRef.current.value, displayNameRef.current.value);
+    } catch {
+      throw new Error("unable to update profile")
+    }
+  };
+
+  // console log for testing
+  const onSubmit = data => {
+    console.log(data);
+  };
 
   return(
     <div>
-        <img src={user.photoURL} alt="Profile pic" />
-        <p>Joined on: {user.metadata.creationTime}</p>
-        <form>
-        <button onclick="updateProfile()">Update</button>
+      <img src={user.photoURL} alt="Profile pic" />
+      <p>Joined on: {user.metadata.creationTime}</p>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          {/* place holder is text inside */}
+          <div>
+            <label>Profile Picture URL</label>
+              <input placeholder="URL goes here..." ref={ photoURLRef } {...register("photoURLRef")  } />
+                <p>{errors.photoURL && "Could not change photoURL"}</p>
+          </div>
+          <div>
+            <label>Display Name</label>
+              <input placeholder="Display name goes here..." ref= { displayNameRef } {...register("displayNameRef", { maxLength: 32 })} /> 
+                <p>{errors.bio && "The display name cannot exceed 32 characters."}</p>
+          </div>
+        <input type="submit" />
         </form>
     </div>
   )
