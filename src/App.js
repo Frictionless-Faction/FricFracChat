@@ -10,18 +10,19 @@ import { AuthProvider } from "./contexts/AuthContext";
 
 function App(){
   return(
-    <AuthProvider>
+
       <Router>
-        <div className="container">
-        </div>
-        <Switch>
-          <Route path= "/" exact component={Home} />
-          <Route path="/chat"  component={Chat} />
-          <Route path="/about" component={About} />
-          <Route path="/update" component={UpdateInfoP1} />
-        </Switch>
+        <AuthProvider>
+          <div className="container">
+          </div>
+          <Switch>
+            <Route path= "/" exact component={Home} />
+            <Route path="/chat"  component={Chat} />
+            <Route path="/about" component={About} />
+            <Route path="/update" component={UpdateInfoP1} />
+          </Switch>
+        </AuthProvider>
       </Router>
-    </AuthProvider>
   );
 };
 
