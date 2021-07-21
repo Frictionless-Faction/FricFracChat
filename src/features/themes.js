@@ -5,12 +5,12 @@
 import { ThemeProvider } from '@material-ui/core';
 import { createTheme } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
-import Brightness3Icon from '@material-ui/icons/Brightness3';
-import Brightness7Icon from '@material-ui/icons/Brightness7';
+import MoonIcon from '@material-ui/icons/Brightness3';
+import RoundSunIcon from '@material-ui/icons/WbSunnyRounded';
 
 export default function App() {
     const [theme, setTheme] = useState(true)
-    const icon = !theme ? <Brightness7Icon /> : <Brightness3Icon />
+    const icon = !theme ? <RoundSunIcon /> : <MoonIcon />
     const appliedTheme = createTheme(theme ? light : dark)
     return (
         <ThemeProvider theme={appliedTheme}>

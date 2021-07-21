@@ -5,16 +5,17 @@
 import React from "react";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
 import Slider from "@material-ui/core/Slider";
-
 import Container from "@material-ui/core/Container";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: 300 + theme.spacing(3) * 2
   },
+
   margin: {
     height: theme.spacing(3)
   }
+
 }));
 
 const iOSBoxShadow =
