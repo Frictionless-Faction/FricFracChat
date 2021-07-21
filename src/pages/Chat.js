@@ -39,13 +39,10 @@ function Chat() {
   const [user] = useAuthState(auth);
 
   return (
-    <div className="App">
-      <Headroom>
-        <h1>⚛️🔥💬</h1>
-        <SignOut />
-      </Headroom>
-
-      <section>
+    <div>
+    {/* <h1 className="header">⚛️🔥💬</h1> */}
+    <SignOut />
+      <section className="App">
         {user ? <ChatRoom /> : <SignIn />}
       </section>
       <Link to = "/about" >About</Link>
@@ -72,7 +69,9 @@ function SignIn() {
 
 function SignOut() {
   return auth.currentUser && (
+    <Headroom>
     <button className="sign-out" onClick={() => auth.signOut()}>Sign Out</button>
+    </Headroom>
   )
 };
 
@@ -117,8 +116,8 @@ function ChatRoom() {
     </main>
 
     <form onSubmit={sendMessage}>
-
-      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" />
+  
+      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} text={getQuote} />
 
       <button className="submit" type="submit" disabled={!formValue}>🕊️</button>
 
@@ -139,5 +138,15 @@ function ChatMessage(props) {
     </div>
   </>)
 };
+
+function getQuote() {
+    fetch("https://type.fit/api/quotes")
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      console.log(data);
+    });
+  }
 
 export default Chat;
