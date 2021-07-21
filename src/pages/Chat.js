@@ -10,7 +10,7 @@ import { useCollectionData } from 'react-firebase-hooks/firestore';
 require ('dotenv').config();
 
 // initalise the config of the firebase app
-firebase.initializeApp({
+const firebaseConfig = firebase.initializeApp({
   apiKey: process.env.REACT_APP_apiKey,
   authDomain: process.env.REACT_APP_authDomain,
   projectId: process.env.REACT_APP_projectId,
@@ -26,7 +26,7 @@ firebase.initializeApp({
 //   throw envResult.error
 // };
 
-export const auth = firebase.auth();
+export const auth = firebaseConfig.auth();
 export const firestore = firebase.firestore();
 // const analytics = firebase.analytics();
 
