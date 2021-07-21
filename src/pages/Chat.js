@@ -1,10 +1,12 @@
 // Going to put the app code in here
 import React, { useRef, useState } from 'react';
 import '../App.css'
+import '../Sign-In.css'
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
 import {Link} from  'react-router-dom';
+import  Headroom  from 'react-headroom';
 // import 'firebase/analytics';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -38,10 +40,10 @@ function Chat() {
 
   return (
     <div className="App">
-      <header>
+      <Headroom>
         <h1>⚛️🔥💬</h1>
         <SignOut />
-      </header>
+      </Headroom>
 
       <section>
         {user ? <ChatRoom /> : <SignIn />}
@@ -118,7 +120,7 @@ function ChatRoom() {
 
       <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" />
 
-      <button type="submit" disabled={!formValue}>🕊️</button>
+      <button className="submit" type="submit" disabled={!formValue}>🕊️</button>
 
     </form>
   </>)
