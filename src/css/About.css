@@ -244,12 +244,17 @@ h2 {
     display: block;
   }
 }
+
+
 .aboutBtn {
   background: #FFD6A5;
   font-family: "Fredoka One", cursive;
   border-radius: 45px;
   margin: 20px;
   position: relative;
+  width: 300px;
+  height: 100px;
+  font-size: 24px;
 }
 
 .aboutBtn:before{
@@ -271,6 +276,9 @@ h2 {
   font-family: "Fredoka One", cursive;
   border-radius: 45px;
   position: relative;
+  width: 200px;
+  height: 100px;
+  font-size: 22px;
 }
 
 .depBtn:before{

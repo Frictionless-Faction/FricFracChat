@@ -12,7 +12,7 @@ export default function About() {
   return (
     <div className="about">
       <h1 className="title1">About Our Project</h1>
-      
+      <div className="btns">
       <div className="project">
         <Popup trigger={<button className="aboutBtn">About Us</button>}>
           {(close) => (
@@ -109,6 +109,7 @@ export default function About() {
     )}
   </Popup>
 
+</div>
 </div>
         
         <div className="githubRepo">
