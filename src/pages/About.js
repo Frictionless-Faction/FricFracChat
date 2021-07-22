@@ -124,7 +124,7 @@ export default function About() {
               href="https://github.com/Frictionless-Faction"
               target="_blank"
               rel="noreferrer"
-              style={{ textDecoration: "none" }}
+              style={{ textDecoration:"none"}}
             >
               Our Code
             </a>
