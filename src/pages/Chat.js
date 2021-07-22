@@ -1,17 +1,19 @@
 // Going to put the app code in here
 import React, { useRef, useState } from 'react';
 import '../App.css'
+import '../Sign-In.css'
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
 import {Link} from  'react-router-dom';
+import  Headroom  from 'react-headroom';
 // import 'firebase/analytics';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 require ('dotenv').config();
 
-// initalise the config of the firebase app
+// initialise the config of the firebase app
 firebase.initializeApp({
   apiKey: process.env.REACT_APP_apiKey,
   authDomain: process.env.REACT_APP_authDomain,
@@ -37,17 +39,13 @@ function Chat() {
   const [user] = useAuthState(auth);
 
   return (
-    <div className="App">
-      <header>
-        <h1>⚛️🔥💬</h1>
-        <SignOut />
-      </header>
-
-      <section>
+    <div>
+    {/* <h1 className="header">⚛️🔥💬</h1> */}
+    <SignOut />
+      <section className="App">
         {user ? <ChatRoom /> : <SignIn />}
       </section>
-      <Link to = "/about" >About</Link>
-
+      <Link className="about" to = "/about" >About</Link>
     </div>
   );
 };
@@ -60,17 +58,18 @@ function SignIn() {
   };
 
   return (
-    <>
+    <div class="sign-in-container">
       <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
-      <p>Do not violate the community guidelines or you will be banned for life!</p>
-    </>
+      <div className="tagline">Check out our community guidelines or you could be banned for life!</div>
+    </div>
   )
-
 };
 
 function SignOut() {
   return auth.currentUser && (
+    <Headroom>
     <button className="sign-out" onClick={() => auth.signOut()}>Sign Out</button>
+    </Headroom>
   )
 };
 
@@ -87,7 +86,7 @@ function ChatRoom() {
   
   // e as event for the function argument
   const sendMessage = async (e) => {
-    // normally when a form submited it refresh the page but here we add this line to prevent it 
+    // normally when a form submitted it refresh the page but here we add this line to prevent it 
     e.preventDefault();
 
     const { uid, photoURL } = auth.currentUser;
@@ -115,10 +114,10 @@ function ChatRoom() {
     </main>
 
     <form onSubmit={sendMessage}>
+  
+      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Say something.. " />
 
-      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" />
-
-      <button type="submit" disabled={!formValue}>🕊️</button>
+      <button className="submit" type="submit" disabled={!formValue}>🕊️</button>
 
     </form>
   </>)
@@ -137,5 +136,6 @@ function ChatMessage(props) {
     </div>
   </>)
 };
+
 
 export default Chat;
