@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import homeCSS from '../css/Home.module.css';
-
+// Note styling will be fixed, please just bare with me.
 function Home() {
     return(
     <div className="container">
