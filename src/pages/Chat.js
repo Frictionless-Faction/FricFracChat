@@ -1,7 +1,7 @@
 // Going to put the app code in here
 import React, { useRef, useState } from 'react';
-import '../App.css'
-import '../Sign-In.css'
+import '../css/Sign-In.css';
+import '../css/App.css';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
