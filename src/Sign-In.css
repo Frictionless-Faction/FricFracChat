@@ -1,35 +1,26 @@
-form {
-    height: 10vh;
-    position: fixed;
-    bottom: 0;
-    background-color: rgb(24, 23, 23);
-    width: 100%;
-    max-width: 728px;
-    display: flex;
-    font-size: 1.5rem;
-  }
-  
-  form button {
-    width: 20%;
-    background-color: rgb(56, 56, 143);
-  }
+.sign-in-container {
+  margin-top: 25%;
+  width: 400px;
+  height: 300px;
+}
 
-.sign-in { /* button */
-    justify-content: center;
-    font-family: "Fredoka One", cursive;
-    align-items: center;
-    color: #fff;
-    background: #94b8ff;
-    box-sizing: border-box;
-    width: 150px;
-    height: 150px;
-    padding: 80px 1em 0 1em;
-    margin: 0px 100px;
-    margin-left: 180px;
-    padding: 40px 1em 0 1em;
-    background-color: #a4c9cf;
-    border-radius: 100% 100% 0 0;
-  }
+.sign-in {
+  /* button */
+  justify-content: center;
+  font-family: "Fredoka One", cursive;
+  font-size: 1.2em;
+  align-items: center;
+  color: #fff;
+  width: 150px;
+  height: 150px;
+  padding: 80px 1em 0 1em;
+  margin: 0px 100px;
+  margin-left: 180px;
+  padding: 40px 1em 0 1em;
+  background-color: #a4c9cf;
+  border-radius: 100% 100% 0 0;
+  border-color: rgba(191, 229, 217, 0.548);
+}
 /* 
 .glossy {
   font-family: "Fredoka One", cursive;
@@ -71,5 +62,7 @@ form {
 } */
 
 .tagline {
-    text-align: center;
-  }  
+  text-align: center;
+  margin-top: 5%;
+  margin-left: 25%;
+}

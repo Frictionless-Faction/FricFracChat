@@ -2,25 +2,20 @@
 
 body,
 button {
-  /* background-color: #2a3428; */
   font-family: "Jost", sans-serif;
 }
 
 .App {
   max-width: 728px;
-  /* margin: 0 auto; */
-  /* background-color: rgba(160, 196, 255, 0.246); */
 }
 
-/* .App header {
-  background-color: rgb(191, 229, 217);
-  color: white;
-} */
-
 .headroom {
-  background-color:rgba(191, 229, 217, 0.548);
+  background-color: rgba(191, 229, 217, 0.548);
   min-height: 100px;
   max-height: 100vh;
+  border-bottom-left-radius: 50% 20%;
+  border-bottom-right-radius: 50% 20%;
+  box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
   top: 0;
   left: 0;
   right: 0;
@@ -37,75 +32,37 @@ button {
   position: fixed;
   transform: translateY(-100%);
 }
-/* .headroom--pinned {
-  position: fixed;
-  transform: translateY(0%);
-} */
-
-.header {
-  display: flex;
-}
 
 .sign-out {
+  font-family: "Fredoka One", cursive;
+  font-weight: 100;
   display: flex;
   margin: auto;
   background-color: #a0c4ff;
   border: none;
-  color: #e5e5ea;
+  color: #ffffff;
   padding: 15px 32px;
   text-decoration: none;
   cursor: -webkit-grab;
   font-size: 1.25rem;
   font-weight: 500;
   box-shadow: 0 3px 5px rgba(95, 95, 95, 0.18);
-  /* animation-name: bounce;
-  animation-iteration-count: 5s infinite linear;
-  position: relative; */
-  border-radius: .4em;
+  border-radius: 0.4em;
 }
 
 .sign-out::after {
-	/* position: absolute;
-	right: 0;
-	top: 50%;
-	width: 0;
-	height: 0; */
-	border: 20px solid transparent;
-	border-left-color: #00aabb;
-	border-right: 0;
-	border-top: 0;
-	margin-top: -10px;
-	margin-right: -20px;
+  border: 20px solid transparent;
+  border-left-color: #00aabb;
+  border-right: 0;
+  border-top: 0;
+  margin-top: -10px;
+  margin-right: -20px;
 }
 
 .sign-out:hover {
-  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
-/* 
-@keyframes sign-out {
-    0% {
-      transform: scale(1, 1) translateY(0);
-    }
-    10% {
-      transform: scale(1.1, 0.9) translateY(0);
-    }
-    30% {
-      transform: scale(0.9, 1.1) translateY(-100px);
-    }
-    50% {
-      transform: scale(1.05, 0.95) translateY(0);
-    }
-    57% {
-      transform: scale(1, 1) translateY(-7px);
-    }
-    64% {
-      transform: scale(1, 1) translateY(0);
-    }
-    100% {
-      transform: scale(1, 1) translateY(0);
-    }
-  } */
-
 
 .App section {
   /* background */
@@ -137,7 +94,7 @@ main::-webkit-scrollbar-thumb {
   background: #6649b8;
 }
 
-/* form {
+form {
   height: 10vh;
   position: fixed;
   bottom: 0;
@@ -146,25 +103,28 @@ main::-webkit-scrollbar-thumb {
   max-width: 728px;
   display: flex;
   font-size: 1.5rem;
-} */
+}
 
 .submit {
   /* send message button */
-  /* width: 20%; */
+  width: 20%;
   background-color: rgb(255, 255, 255);
   border: none;
   color: #e5e5ea;
-  /* padding: 15px 32px; */
+  padding: 15px 32px;
   text-decoration: none;
   cursor: grab;
   font-size: 1.25rem;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .submit:hover {
-  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
-  
+
 button:disabled {
   /* opacity: 0; */
   cursor: not-allowed;
@@ -182,7 +142,9 @@ input {
   border-color: #a0c4ff62;
   outline: none;
   padding: 0 10px;
-  box-shadow: rgba(240, 46, 170, 0.4) 15px 15px, rgba(240, 46, 170, 0.3) 100px 100px, rgba(240, 46, 170, 0.2) 150px 150px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 250px 250px;
+  box-shadow: rgba(240, 46, 170, 0.4) 15px 15px,
+    rgba(240, 46, 170, 0.3) 100px 100px, rgba(240, 46, 170, 0.2) 150px 150px,
+    rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 250px 250px;
 }
 
 p {
@@ -195,7 +157,8 @@ p {
   position: relative;
   color: white;
   text-align: center;
-  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
 .message {

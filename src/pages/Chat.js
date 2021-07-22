@@ -13,7 +13,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 require ('dotenv').config();
 
-// initalise the config of the firebase app
+// initialise the config of the firebase app
 firebase.initializeApp({
   apiKey: process.env.REACT_APP_apiKey,
   authDomain: process.env.REACT_APP_authDomain,
@@ -59,12 +59,11 @@ function SignIn() {
   };
 
   return (
-    <>
+    <div class="sign-in-container">
       <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
-      <p className="tagline">Check out our community guidelines or you could be banned for life!</p>
-    </>
+      <div className="tagline">Check out our community guidelines or you could be banned for life!</div>
+    </div>
   )
-  // className="glossy"
 };
 
 function SignOut() {
@@ -88,7 +87,7 @@ function ChatRoom() {
   
   // e as event for the function argument
   const sendMessage = async (e) => {
-    // normally when a form submited it refresh the page but here we add this line to prevent it 
+    // normally when a form submitted it refresh the page but here we add this line to prevent it 
     e.preventDefault();
 
     const { uid, photoURL } = auth.currentUser;
@@ -117,7 +116,7 @@ function ChatRoom() {
 
     <form onSubmit={sendMessage}>
   
-      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} text={getQuote} />
+      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Say something.. " />
 
       <button className="submit" type="submit" disabled={!formValue}>🕊️</button>
 
@@ -139,14 +138,5 @@ function ChatMessage(props) {
   </>)
 };
 
-function getQuote() {
-    fetch("https://type.fit/api/quotes")
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(data) {
-      console.log(data);
-    });
-  }
 
 export default Chat;
