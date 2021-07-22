@@ -1,5 +1,6 @@
 import React from "react";
 import Popup from "reactjs-popup";
+import { Link } from "react-router-dom";
 import "../css/About.css";
 import { FaFigma, FaGithub, FaReact } from "react-icons/fa";
 import { SiFirebase } from "react-icons/si";
@@ -7,12 +8,19 @@ import danny from "../images/danny.jpg";
 import roman from "../images/roman.png";
 import jess from "../images/jess.jpeg";
 import mina from "../images/mina.JPG";
+import arrow from "../images/arrow.png";
 
 export default function About() {
   return (
     <div className="about">
-      <h1 className="title1">About Our Project</h1>
-      <div className="btns">
+      <div className="arrow">
+        <img src={arrow} alt="arrow" className="arrowImg" />
+        <Link className="link1" to="/Home" style={{ textDecoration: "none" }}>
+          Home
+        </Link>
+
+        <h1 className="title1">About Our Project</h1>
+      </div>
       <div className="project">
         <Popup trigger={<button className="aboutBtn">About Us</button>}>
           {(close) => (
@@ -34,7 +42,6 @@ export default function About() {
                 time of writing, the title is pending.
                 <br />
               </ul>
-              
               <h3>👨‍💻Who or what is Code Nation?</h3>
               <br />
               Code Nation is," unique, business led, digital training provider
@@ -55,63 +62,61 @@ export default function About() {
         </Popup>
 
         <div className="dependencie">
-        <Popup trigger={<button className="depBtn">Dependenies</button>}>
-    {close => (
-      <div>
-        <div className="grow-container">
-            <a
-              className="to-react circle-button"
-              href="https://reactjs.org/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FaReact />
-            </a>
-          </div>
+          <Popup trigger={<button className="depBtn">Dependenies</button>}>
+            {(close) => (
+              <div>
+                <div className="grow-container">
+                  <a
+                    className="to-react circle-button"
+                    href="https://reactjs.org/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FaReact />
+                  </a>
+                </div>
 
-          <div className="grow-container">
-            <a
-              className="to-firebase circle-button"
-              href="https://firebase.google.com/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <SiFirebase />
-            </a>
-          </div>
+                <div className="grow-container">
+                  <a
+                    className="to-firebase circle-button"
+                    href="https://firebase.google.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <SiFirebase />
+                  </a>
+                </div>
 
-          <div className="grow-container ">
-            <a
-              className="to-figma circle-button"
-              href="https://www.figma.com/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FaFigma />
-            </a>
-          </div>
+                <div className="grow-container ">
+                  <a
+                    className="to-figma circle-button"
+                    href="https://www.figma.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FaFigma />
+                  </a>
+                </div>
 
-          <div className="grow-container">
-            <a
-              className="to-github circle-button"
-              href="https://github.com/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FaGithub />
-            </a>
-          </div>
-        
-        <a className="close" href=" " onClick={close}>
-          &times;
-        </a>
-      </div>
-    )}
-  </Popup>
+                <div className="grow-container">
+                  <a
+                    className="to-github circle-button"
+                    href="https://github.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FaGithub />
+                  </a>
+                </div>
 
-</div>
-</div>
-        
+                <a className="close" href=" " onClick={close}>
+                  &times;
+                </a>
+              </div>
+            )}
+          </Popup>
+        </div>
+
         <div className="githubRepo">
           <div className="btn-repo">
             <a
@@ -124,8 +129,8 @@ export default function About() {
               Our Code
             </a>
           </div>
-          </div>
-        
+        </div>
+
         <br />
         <br />
         <h2>Our Team:</h2>
