@@ -15,7 +15,7 @@ export default function About() {
     <div className={aboutCSS.about}>
     <div className={aboutCSS.arrow}>
         <img src={arrow} alt="arrow" className={aboutCSS.arrowImg} />
-        <Link className={aboutCSS.link1} to="/Home" style={{ textDecoration: "none" }}>
+        <Link className={aboutCSS.link1} to="/" style={{ textDecoration: "none" }}>
           Home
         </Link>
 
