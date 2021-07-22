@@ -7,6 +7,12 @@ button {
 
 .App {
   max-width: 728px;
+  text-align:center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  margin: auto;
 }
 
 .headroom {
@@ -46,7 +52,7 @@ button {
   cursor: -webkit-grab;
   font-size: 1.25rem;
   font-weight: 500;
-  box-shadow: 0 3px 5px rgba(95, 95, 95, 0.18);
+  box-shadow: 0 3px 5px rgba(95, 95, 95, 0.151);
   border-radius: 0.4em;
 }
 
@@ -60,8 +66,7 @@ button {
 }
 
 .sign-out:hover {
-  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
-    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  box-shadow: 10px 20px 40px 20px #a0c4ff2e;
 }
 
 .App section {
@@ -87,7 +92,7 @@ main::-webkit-scrollbar {
 }
 
 main::-webkit-scrollbar-track {
-  background: #1e1e24;
+  background: #ffffff;
 }
 
 main::-webkit-scrollbar-thumb {
@@ -126,7 +131,6 @@ form {
 }
 
 button:disabled {
-  /* opacity: 0; */
   cursor: not-allowed;
 }
 
@@ -189,7 +193,26 @@ img {
   margin: 2px 5px;
 }
 
-/* ul, li {
+ ul, li {
   text-align: left;
   list-style: none;
-} */
+} 
+
+.about {
+  font-family: "Fredoka One", cursive;
+  font-weight: 100;
+  background-color: #a0c4ff;
+  border: none;
+  color: #ffffff;
+  padding: 15px 32px;
+  text-decoration: none;
+  cursor: -webkit-grab;
+  font-size: 1.25rem;
+  font-weight: 500;
+  box-shadow: 0 3px 5px rgba(95, 95, 95, 0.18);
+  border-radius: 0.4em;
+}
+
+.about:hover {
+  box-shadow: 10px 20px 40px 20px #a0c4ff2e;
+}

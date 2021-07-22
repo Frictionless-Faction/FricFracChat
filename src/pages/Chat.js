@@ -45,8 +45,7 @@ function Chat() {
       <section className="App">
         {user ? <ChatRoom /> : <SignIn />}
       </section>
-      <Link to = "/about" >About</Link>
-
+      <Link className="about" to = "/about" >About</Link>
     </div>
   );
 };
