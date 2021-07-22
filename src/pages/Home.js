@@ -1,22 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import "../css/Home.css";
+import homeCSS from '../css/Home.module.css';
 
 function Home() {
     return(
     <div className="container">
-        <div className="bubble bubble-bottom-left">
+        <div className={homeCSS.bubble}>
             <h1> Postie </h1>
         </div>
-        <div className="bubble_2 buuble2_bottom-left">
+        <div className={homeCSS.bubble_2}>
             
-        <Link className="link" to ="/About" style ={{textDecoration : "none"}}> <h3>About</h3></Link>
+        <Link className={homeCSS.Link} to ="/About" style ={{textDecoration : "none"}}> <h3 className={homeCSS.h3}>About</h3></Link>
             
         </div>
 
-        <div className="bubble_3 buuble3_bottom-left">           
+        <div className={homeCSS.bubble_3}>           
            
-            <Link className="link" to = "/Chat"  style= {{textDecoration:"none"}}> <h3>Enter</h3></Link>
+            <Link className={homeCSS.Link} to = "/Chat"  style= {{textDecoration:"none"}}> <h3 className={homeCSS.h3}>Enter</h3></Link>
 
         </div>
     </div>
