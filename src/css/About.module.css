@@ -13,6 +13,8 @@ h1 {
 
 p {
   color: rgb(90, 88, 88);
+  border: none;
+  box-shadow: none;
 }
 
 .about,
@@ -61,7 +63,7 @@ ul li {
   transition: all 0.4s ease;
 }
 
-.grow-container {
+.growContainer {
   display: inline-block;
   margin: 1em;
 }
@@ -116,7 +118,7 @@ h2 {
   padding: 20px;
 }
 
-.btn-repo {
+.btnRepo {
   min-width: 300px;
   min-height: 60px;
   font-family: "Fredoka One", sans-serif;
@@ -217,12 +219,16 @@ h2 {
   color: grey;
 }
 
-.links_git {
+.linksGit {
   float: left;
   width: 23.3%;
   height: 100%;
   margin-bottom: 16px;
   padding: 0 8px;
+}
+
+.atName {
+  font-size: 2rem;
 }
 
 .gits {
@@ -243,6 +249,7 @@ h2 {
 }
 
 .button {
+  box-shadow: none;
   border: none;
   outline: 0;
   display: inline-block;
