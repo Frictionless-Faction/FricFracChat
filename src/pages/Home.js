@@ -6,7 +6,7 @@ function Home() {
     return(
     <div className="container">
         <div className={homeCSS.bubble}>
-            <h1> Postie </h1>
+            <h1 className={homeCSS.h1}> Postie </h1>
         </div>
         <div className={homeCSS.bubble_2}>
             
