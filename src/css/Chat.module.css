@@ -26,7 +26,8 @@ button {
   top: 0;
   left: 0;
   right: 0;
-  zindex: 1;
+  nav-index: 1;
+  width: 708px;
 }
 .headroom--unfixed {
   position: relative;
@@ -40,7 +41,7 @@ button {
   transform: translateY(-100%);
 }
 
-.sign-out {
+.signOut {
   font-family: "Fredoka One", sans-serif;
   font-weight: 100;
   display: flex;
@@ -57,7 +58,7 @@ button {
   border-radius: 0.4em;
 }
 
-.sign-out::after {
+.signOut::after {
   border: 20px solid transparent;
   border-left-color: #00aabb;
   border-right: 0;
@@ -66,7 +67,7 @@ button {
   margin-right: -20px;
 }
 
-.sign-out:hover {
+.signOut:hover {
   box-shadow: 10px 20px 40px 20px #a0c4ff2e;
 }
 
@@ -79,9 +80,14 @@ button {
   background-color: rgb(255, 255, 255);
 }
 
+/* .chatSection {
+  width: 500px;
+} */
+
 main {
   padding: 10px;
   height: 80vh;
+  width: 100%;
   margin: 10vh 0 10vh;
   overflow-y: scroll;
   display: flex;
