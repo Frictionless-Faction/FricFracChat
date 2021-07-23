@@ -21,8 +21,6 @@ h3 {
 
 .bubble {
     position: relative;
- 
-
     line-height: 24px;
     width: 700px;
     background: #A0C4FF;
@@ -33,7 +31,7 @@ h3 {
     margin-top: 140px;
   }
   
-  .bubble-bottom-left::before {
+  .bubble::before {
     content: "";
     width: 0px;
     height: 0px;
@@ -59,7 +57,7 @@ h3 {
     margin: 30px;
     
 }
-.buuble2_bottom-left:before{
+.bubble_2::before{
     content: "";
     width: 0px;
     height: 0px;
@@ -86,7 +84,7 @@ h3 {
     margin: 30px;
 }
 
-.buuble3_bottom-left:before{
+.bubble_3::before{
     content: "";
     width: 0px;
     height: 0px;
