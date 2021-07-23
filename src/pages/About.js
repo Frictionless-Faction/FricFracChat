@@ -19,7 +19,7 @@ export default function About() {
           Home
         </Link>
 
-        <h1 className={aboutCSS.h1}>About Our Project</h1>
+        <h1 className={aboutCSS.pageTitle}>About Our Project</h1>
       </div>
       <div className="project">
         <Popup trigger={<button className={aboutCSS.aboutBtn}>About Us</button>}>

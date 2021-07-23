@@ -5,7 +5,8 @@ body {
   background-color: #030303;
   box-shadow: none;
 }
-h1 {
+
+.pageTitle {
   font-family: "Fredoka One", sans-serif;
   text-align: center;
   color: #FDFFB6;
