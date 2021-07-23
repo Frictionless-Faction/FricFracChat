@@ -3,7 +3,7 @@ body {
   background-color: #030303;
 }
 h1 {
-  font-family: "Fredoka One", cursive;
+  font-family: "Fredoka One", sans-serif;
   text-align: center;
   color: #fdffb6;
 }
@@ -29,7 +29,7 @@ ul li {
   top: 58px;
   left: 96px;
   color: #fdffb6;
-  font-family: "Fredoka One", cursive;
+  font-family: "Fredoka One", sans-serif;
 }
 .flat-under {
   display: flex;
@@ -87,7 +87,7 @@ ul li {
 }
 
 h2 {
-  font-family: "Fredoka One", cursive;
+  font-family: "Fredoka One", sans-serif;
   text-align: center;
   padding: 30px;
   color: #fdffb6;
@@ -113,7 +113,7 @@ h3 {
   cursor: pointer;
   min-width: 300px;
   min-height: 60px;
-  font-family: "Fredoka One", cursive;
+  font-family: "Fredoka One", sans-serif;
   font-size: 22px;
   text-transform: uppercase;
   letter-spacing: 1.3px;
@@ -249,7 +249,7 @@ h3 {
 
 .aboutBtn {
   background: #ffd6a5;
-  font-family: "Fredoka One", cursive;
+  font-family: "Fredoka One", sans-serif;
   line-height: 24px;
   border-radius: 45px;
   margin: 20px;
@@ -275,7 +275,7 @@ h3 {
 
 .depBtn {
   background: #ffc6ff;
-  font-family: "Fredoka One", cursive;
+  font-family: "Fredoka One", sans-serif;
   border-radius: 45px;
   position: relative;
   width: 200px;
