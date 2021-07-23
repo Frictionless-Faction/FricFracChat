@@ -11,6 +11,8 @@ import mina from "../images/mina.JPG";
 import arrow from "../images/arrow.png";
 
 export default function About() {
+
+
   return (
     <div className={aboutCSS.about}>
     <div className={aboutCSS.arrow}>

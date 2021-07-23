@@ -33,7 +33,7 @@ h3 {
     margin-top: 140px;
   }
   
-  .bubble-bottom-left:before {
+  .bubble-bottom-left::before {
     content: "";
     width: 0px;
     height: 0px;
