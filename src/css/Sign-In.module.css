@@ -1,4 +1,4 @@
-.sign-in-container {
+.signInContainer {
   display: flex;
   margin-top: 25%;
   width: 100vh;
@@ -7,10 +7,10 @@
   height: 300px; */
 }
 
-.sign-in {
+.signIn {
   /* button */
   display: flex;
-  font-family: "Fredoka One", cursive;
+  font-family: "Fredoka One", sans-serif;
   font-size: 1.2em;
   align-items: center;
   color: #fff;
@@ -66,6 +66,7 @@
 
 .tagline {
   text-align: center;
+  color: #ffff;
   /* margin-top: 5%;
   margin-left: 25%; */
 }

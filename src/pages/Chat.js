@@ -22,13 +22,8 @@ firebase.initializeApp({
   messagingSenderId: process.env.REACT_APP_messagingSenderId,
   appId: process.env.REACT_APP_appId,
   measurementId: process.env.REACT_APP_measurementId
-
 });
 
-// // catch errors for dotenv
-// if (env.error) {
-//   throw env.error
-// };
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
@@ -55,10 +50,11 @@ function SignIn() {
     auth.signInWithPopup(provider);
   };
 
+
   return (
-    <div class="sign-in-container">
-      <button className={chatCSS.button} onClick={signInWithGoogle}>Sign in with Google</button>
-      <div className="tagline">Check out our community guidelines or you could be banned for life!</div>
+    <div class={signInCSS.signInContainer}>
+      <button className={signInCSS.signIn} onClick={signInWithGoogle}>Sign in with Google</button>
+      <div className={signInCSS.tagline}>Check out our community guidelines or you could be banned for life!</div>
     </div>
   )
 };
@@ -79,7 +75,6 @@ function ChatRoom() {
   const query = messagesRef.orderBy('createdAt').limit(25);
 
   const [messages] = useCollectionData(query, { idField: 'id' });
-
   const [formValue, setFormValue] = useState('');
 
   
