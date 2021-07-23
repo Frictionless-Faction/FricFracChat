@@ -1,7 +1,7 @@
 import React from "react";
 import Popup from "reactjs-popup";
 import { Link } from "react-router-dom";
-import "../css/About.css";
+import aboutCSS from '../css/About.module.css';
 import { FaFigma, FaGithub, FaReact } from "react-icons/fa";
 import { SiFirebase } from "react-icons/si";
 import danny from "../images/danny.jpg";
@@ -11,18 +11,20 @@ import mina from "../images/mina.JPG";
 import arrow from "../images/arrow.png";
 
 export default function About() {
+
+
   return (
-    <div className="about">
-      <div className="arrow">
-        <img src={arrow} alt="arrow" className="arrowImg" />
-        <Link className="link1" to="/Home" style={{ textDecoration: "none" }}>
+    <div className={aboutCSS.about}>
+    <div className={aboutCSS.arrow}>
+        <img src={arrow} alt="arrow" className={aboutCSS.arrowImg} />
+        <Link className={aboutCSS.link1} to="/" style={{ textDecoration: "none" }}>
           Home
         </Link>
 
-        <h1 className="title1">About Our Project</h1>
+        <h1 className={aboutCSS.pageTitle}>About Our Project</h1>
       </div>
       <div className="project">
-        <Popup trigger={<button className="aboutBtn">About Us</button>}>
+        <Popup trigger={<button className={aboutCSS.aboutBtn}>About Us</button>}>
           {(close) => (
             <div className="content">
               <h3>
@@ -61,11 +63,11 @@ export default function About() {
           )}
         </Popup>
 
-        <div className="dependencie">
-          <Popup trigger={<button className="depBtn">Dependenies</button>}>
+        <div className="dependency">
+          <Popup trigger={<button className={aboutCSS.depBtn}>Dependenies</button>}>
             {(close) => (
               <div>
-                <div className="grow-container">
+                <div className={aboutCSS.growContainer}>
                   <a
                     className="to-react circle-button"
                     href="https://reactjs.org/"
@@ -76,7 +78,7 @@ export default function About() {
                   </a>
                 </div>
 
-                <div className="grow-container">
+                <div className={aboutCSS.growContainer}>
                   <a
                     className="to-firebase circle-button"
                     href="https://firebase.google.com/"
@@ -87,7 +89,7 @@ export default function About() {
                   </a>
                 </div>
 
-                <div className="grow-container ">
+                <div className={aboutCSS.growContainer}>
                   <a
                     className="to-figma circle-button"
                     href="https://www.figma.com/"
@@ -98,7 +100,7 @@ export default function About() {
                   </a>
                 </div>
 
-                <div className="grow-container">
+                <div className={aboutCSS.growContainer}>
                   <a
                     className="to-github circle-button"
                     href="https://github.com/"
@@ -109,7 +111,7 @@ export default function About() {
                   </a>
                 </div>
 
-                <a className="close" href=" " onClick={close}>
+                <a className={aboutCSS.close} href=" " onClick={close}>
                   &times;
                 </a>
               </div>
@@ -117,14 +119,14 @@ export default function About() {
           </Popup>
         </div>
 
-        <div className="githubRepo">
-          <div className="btn-repo">
+        <div className={aboutCSS.githubRepo}>
+          <div className={aboutCSS.btnRepo}>
             <a
               className="link"
               href="https://github.com/Frictionless-Faction"
               target="_blank"
               rel="noreferrer"
-              style={{ textDecoration:"none"}}
+              style={{ textDecoration: "none" }}
             >
               Our Code
             </a>
@@ -133,19 +135,19 @@ export default function About() {
 
         <br />
         <br />
-        <h2>Our Team:</h2>
+        <h2 className={aboutCSS.h2}>Our Team:</h2>
       </div>
       <div>
-        <div className="row">
-          <div className="links_git">
-            <div className="gits">
+        <div className={aboutCSS.row}>
+          <div className={aboutCSS.linksGit}>
+            <div className={aboutCSS.gits}>
               <img src={danny} alt="Danny" />
-              <div className="container">
-                <p className="title">Software Developer</p>
-                <p>https://github.com/dannyvsm</p>
-                <p>
-                  <button className="button">
-                    <a
+              <div className={aboutCSS.container}>
+                <p className={aboutCSS.titlep}>Front-End Developer</p>
+                <p className={aboutCSS.atName}>@dannyvsm</p>
+                <p className={aboutCSS.p}>
+                  <button className={aboutCSS.button}>
+                    <a className={aboutCSS.gitsa}
                       href="https://github.com/dannyvsm"
                       target="_blank"
                       rel="noreferrer"
@@ -160,14 +162,14 @@ export default function About() {
             </div>
           </div>
 
-          <div className="links_git">
-            <div className="gits">
+          <div className={aboutCSS.linksGit}>
+            <div className={aboutCSS.gits}>
               <img src={jess} alt="Jess" />
-              <div className="container">
-                <p className="title">Software Developer</p>
-                <p>https://github.com/Jwilss3</p>
-                <p>
-                  <button className="button">
+              <div className={aboutCSS.container}>
+                <p className={aboutCSS.titlep}>Front-End Developer</p>
+                <p className={aboutCSS.atName}>@Jwilss3</p>
+                <p className={aboutCSS.p}>
+                  <button className={aboutCSS.button}>
                     <a
                       href="https://github.com/Jwilss3"
                       target="_blank"
@@ -183,14 +185,14 @@ export default function About() {
             </div>
           </div>
 
-          <div className="links_git">
-            <div className="gits">
+          <div className={aboutCSS.linksGit}>
+            <div className={aboutCSS.gits}>
               <img src={mina} alt="Mina" />
-              <div className="container">
-                <p className="title">Software Developer</p>
-                <p>https://github.com/Minakrv</p>
-                <p>
-                  <button className="button">
+              <div className={aboutCSS.container}>
+                <p className={aboutCSS.titlep}>Fullstack Developer</p>
+                <p className={aboutCSS.atName}>@Minakrv</p>
+                <p className={aboutCSS.p}>
+                  <button className={aboutCSS.button}>
                     <a
                       href="https://github.com/Minakrv"
                       target="_blank"
@@ -206,14 +208,14 @@ export default function About() {
             </div>
           </div>
 
-          <div className="links_git">
-            <div className="gits">
+          <div className={aboutCSS.linksGit}>
+            <div className={aboutCSS.gits}>
               <img src={roman} alt="Roman" />
-              <div className="container">
-                <p className="title">Software Developer</p>
-                <p>https://github.com/RomanHyde</p>
-                <p>
-                  <button className="button">
+              <div className={aboutCSS.container}>
+                <p className={aboutCSS.titlep}>Project Manager, UI/UX Designer & Fullstack Developer</p>
+                <p className={aboutCSS.atName}>@RomanHyde</p>
+                <p className={aboutCSS.p}>
+                  <button className={aboutCSS.button}>
                     <a
                       href="https://github.com/RomanHyde"
                       target="_blank"

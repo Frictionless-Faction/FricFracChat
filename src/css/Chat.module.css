@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
 
 body,
 button {
@@ -25,7 +26,8 @@ button {
   top: 0;
   left: 0;
   right: 0;
-  zindex: 1;
+  nav-index: 1;
+  width: 708px;
 }
 .headroom--unfixed {
   position: relative;
@@ -39,8 +41,8 @@ button {
   transform: translateY(-100%);
 }
 
-.sign-out {
-  font-family: "Fredoka One", cursive;
+.signOut {
+  font-family: "Fredoka One", sans-serif;
   font-weight: 100;
   display: flex;
   margin: auto;
@@ -56,7 +58,7 @@ button {
   border-radius: 0.4em;
 }
 
-.sign-out::after {
+.signOut::after {
   border: 20px solid transparent;
   border-left-color: #00aabb;
   border-right: 0;
@@ -65,7 +67,7 @@ button {
   margin-right: -20px;
 }
 
-.sign-out:hover {
+.signOut:hover {
   box-shadow: 10px 20px 40px 20px #a0c4ff2e;
 }
 
@@ -78,9 +80,14 @@ button {
   background-color: rgb(255, 255, 255);
 }
 
+/* .chatSection {
+  width: 500px;
+} */
+
 main {
   padding: 10px;
   height: 80vh;
+  width: 100%;
   margin: 10vh 0 10vh;
   overflow-y: scroll;
   display: flex;
@@ -199,7 +206,7 @@ img {
 } 
 
 .about {
-  font-family: "Fredoka One", cursive;
+  font-family: "Fredoka One", sans-serif;
   font-weight: 100;
   background-color: #a0c4ff;
   border: none;

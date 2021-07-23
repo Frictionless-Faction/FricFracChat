@@ -1,11 +1,11 @@
 // Going to put the app code in here
 import React, { useRef, useState } from 'react';
-import '../App.css'
-import '../Sign-In.css'
+import signInCSS from '../css/Sign-In.module.css';
+import chatCSS from '../css/Chat.module.css';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
-import {Link} from  'react-router-dom';
+import { Link } from  'react-router-dom';
 import  Headroom  from 'react-headroom';
 // import 'firebase/analytics';
 
@@ -22,13 +22,8 @@ firebase.initializeApp({
   messagingSenderId: process.env.REACT_APP_messagingSenderId,
   appId: process.env.REACT_APP_appId,
   measurementId: process.env.REACT_APP_measurementId
-
 });
 
-// // catch errors for dotenv
-// if (env.error) {
-//   throw env.error
-// };
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
@@ -40,12 +35,10 @@ function Chat() {
 
   return (
     <div>
-    {/* <h1 className="header">⚛️🔥💬</h1> */}
     <SignOut />
-      <section className="App">
+      <section className={chatCSS.app}>
         {user ? <ChatRoom /> : <SignIn />}
       </section>
-      <Link className="about" to = "/about" >About</Link>
     </div>
   );
 };
@@ -57,18 +50,20 @@ function SignIn() {
     auth.signInWithPopup(provider);
   };
 
+
   return (
-    <div class="sign-in-container">
-      <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
-      <div className="tagline">Check out our community guidelines or you could be banned for life!</div>
+    <div class={signInCSS.signInContainer}>
+      <button className={signInCSS.signIn} onClick={signInWithGoogle}>Sign in with Google</button>
+      <div className={signInCSS.tagline}>Check out our community guidelines or you could be banned for life!</div>
     </div>
   )
 };
 
 function SignOut() {
   return auth.currentUser && (
-    <Headroom>
-    <button className="sign-out" onClick={() => auth.signOut()}>Sign Out</button>
+    <Headroom className={chatCSS.headroom}>
+      <Link className={chatCSS.about} to = "/about" >About</Link>
+      <button className={chatCSS.signOut} onClick={() => auth.signOut()}>Sign Out</button>
     </Headroom>
   )
 };
@@ -80,7 +75,6 @@ function ChatRoom() {
   const query = messagesRef.orderBy('createdAt').limit(25);
 
   const [messages] = useCollectionData(query, { idField: 'id' });
-
   const [formValue, setFormValue] = useState('');
 
   
@@ -104,8 +98,8 @@ function ChatRoom() {
     scrolls.current.scrollIntoView({ behavior: 'smooth' });
   }
 
-  return (<>
-    <main>
+  return (<div className={chatCSS.chatSelection}>
+    <main className={chatCSS.main}>
 
       {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
 
@@ -113,14 +107,14 @@ function ChatRoom() {
 
     </main>
 
-    <form onSubmit={sendMessage}>
+    <form className={chatCSS.form} onSubmit={sendMessage}>
   
-      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Say something.. " />
+      <input className={chatCSS.input} value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Be kind and say something nice... " />
 
-      <button className="submit" type="submit" disabled={!formValue}>🕊️</button>
+      <button className={chatCSS.submit} type="submit" disabled={!formValue}>🕊️</button>
 
     </form>
-  </>)
+  </div>)
 };
 
 
@@ -130,9 +124,9 @@ function ChatMessage(props) {
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
   return (<>
-    <div className={`message ${messageClass}`}>
+    <div className={`${chatCSS.message} ${messageClass}`}>
       <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} alt="Profile pic"/>
-      <p>{text}</p>
+      <p className={`${chatCSS.sent} ${chatCSS.p}`}>{text}</p>
     </div>
   </>)
 };
