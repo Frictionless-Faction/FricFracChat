@@ -121,6 +121,7 @@ h2 {
 }
 
 .btnRepo {
+  cursor: pointer;
   min-width: 300px;
   min-height: 60px;
   font-family: "Jost", sans-serif;
@@ -278,9 +279,11 @@ h2 {
 
 
 .aboutBtn {
+  cursor: pointer;
   background: #FFD6A5;
   font-family: "Jost", sans-serif;
   border-radius: 45px;
+  border: none;
   margin: 20px;
   position: relative;
   width: 300px;
@@ -303,9 +306,11 @@ h2 {
 
 
 .depBtn {
+  cursor: pointer;
   background: #FFC6FF;
   font-family: "Jost", sans-serif;
   border-radius: 45px;
+  border: none;
   position: relative;
   width: 200px;
   height: 100px;
